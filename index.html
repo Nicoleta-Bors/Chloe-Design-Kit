@@ -11,7 +11,7 @@
   <body>
     <header>
       <nav>
-        <div class="nav_container">
+        <div class="nav_container_big_screen">
           <p><a href="#">Home</a></p>
           <p>/</p>
           <p><a href="#">About</a></p>
@@ -28,8 +28,29 @@
           <p>/</p>
           <p><a href="#">Insta Bio</a></p>
         </div>
+        <div class="nav_container_small_screen">
+          <p class="logo">Chl&#243;e</p>
+          <button id="menu_icon">
+            <img src="/images/header/menu_icon.svg" alt="Menu icon" />
+          </button>
+        </div>
+        <div class="menu_small_screen">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Insta Bio</a></li>
+          </ul>
+        </div>
       </nav>
       <div class="intro">
+        <div id="header-right-image">
+          <img src="/images/header/right.svg" alt="right-img" />
+        </div>
         <div class="intro_container">
           <p class="header-title">EXQUISITE <span>and MODERN DESIGNS for</span> YOUR BUSINESS</p>
           <div class="header-links">
@@ -41,9 +62,8 @@
           </div>
           <img src="/images/header/Arrow.svg" alt="arrow" />
         </div>
+        <div id="header-left-image"><img src="/images/header/left.svg" alt="left-image" /></div>
       </div>
-      <img id="header-left-image" src="/images/header/left.svg" alt="left-image" />
-      <img id="header-right-image" src="/images/header/right.svg" alt="right-img" />
     </header>
     <main>
       <section class="projects">
@@ -67,9 +87,8 @@
             <p class="branding">branding</p>
           </div>
         </div>
-        <a class="links" href="#">view all projects</a>
+        <a class="links projects-link" href="#">view all projects</a>
       </section>
-
       <section class="services">
         <div class="first">
           <p class="title service-section-title">Services</p>
@@ -185,18 +204,18 @@
         </div>
         <div class="footer-mid">
           <ul>
-            <li>home</li>
-            <li>about</li>
-            <li>services</li>
-            <li>projects</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
           </ul>
         </div>
         <div class="footer-right">
           <ul>
-            <li>shop</li>
-            <li>blog</li>
-            <li>insta bio</li>
-            <li>contact</li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Insta Bio</a></li>
           </ul>
         </div>
       </section>
@@ -204,5 +223,6 @@
         <p>©2020 Design by Squaremuse, Images by Pexels</p>
       </section>
     </footer>
+    <script src="app.js"></script>
   </body>
 </html>

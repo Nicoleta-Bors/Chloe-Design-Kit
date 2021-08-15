@@ -4,5 +4,128 @@
 1025px — 1200px: Desktops, large screens.
 1201px and more — Extra large screens, TV. */
 
+@media only screen and (min-width: 1201px) {
+  header .nav_container_small_screen,
+  header .menu_small_screen ul {
+    display: none;
+  }
+  header .nav_container_big_screen {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  header .nav_container_big_screen,
+  header .menu_small_screen {
+    display: none;
+  }
+  header .nav_container_small_screen {
+    display: flex;
+  }
+
+  nav {
+    max-width: 100%;
+  }
+
+  header .intro {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  #header-right-image,
+  #header-left-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+  }
+
+  #header-right-image {
+    text-align: right;
+  }
+  #header-left-image {
+    right: 0;
+    text-align: left;
+  }
+
+  #header-right-image img,
+  #header-left-image img {
+    height: 200px;
+    width: auto;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 768px) {
+  #projects-section-title,
+  .connect-container h3 {
+    writing-mode: horizontal-tb;
+    text-orientation: initial;
+    transform: rotate(360deg);
+  }
+
+  #second-about-me-img {
+    visibility: hidden;
+  }
+
+  .connect-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px auto 260px 60px;
+  }
+  .connect-container button {
+    grid-column: 1;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  section.services .first {
+    height: 80px;
+  }
+
+  footer .ig-area .ig-images {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer .footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer-left,
+  .footer-mid,
+  .footer-right {
+    height: fit-content;
+  }
+
+  .footer-left {
+    margin-bottom: 20px;
+  }
+
+  .footer-mid {
+    border: none;
+  }
+
+  .header-title {
+    font-size: 50px;
+  }
+
+  .header-links {
+    display: block;
+  }
+
+  section.blogs img {
+    width: 100%;
+    height: auto;
+    padding: 50px;
+  }
+
+  .subscribe-container input {
+    width: auto;
+  }
 }

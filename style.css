@@ -1,10 +1,6 @@
 /* font-family: 'Roboto', sans-serif; Roboto: 100, 300, 500, 100 italic, 300 italic*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,100;1,300&display=swap');
 
-/* :root{
-  --
-} */
-
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +16,7 @@ a {
 }
 
 header {
-  height: 50rem;
+  min-height: 50rem;
   width: 100%;
   background-color: #f9f2ed;
   position: relative;
@@ -28,21 +24,19 @@ header {
 
 nav {
   max-width: 1100px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-height: 120px;
   margin: 0px auto;
 }
 
-header .nav_container {
+header .nav_container_big_screen {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: baseline;
+  flex-wrap: wrap;
 }
 
-header .nav_container a {
+header .nav_container_big_screen a {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -53,6 +47,60 @@ header .nav_container a {
   text-transform: uppercase;
 }
 
+header .nav_container_small_screen {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin: 0;
+  position: fixed;
+  z-index: 1;
+  background-color: #f9f2ed;
+  box-shadow: -10px 13px 18px -10px #bbb;
+}
+
+header .nav_container_small_screen button {
+  border: none;
+  background-color: #f9f2ed;
+}
+
+#menu_icon {
+  cursor: pointer;
+}
+
+.menu_small_screen {
+  margin-top: 50px;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  background-color: #f9f2ed;
+  box-shadow: -10px 13px 18px -10px #bbb;
+}
+
+.menu_small_screen ul {
+  padding: 15px;
+  height: 100vh;
+  width: 135px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.menu_small_screen ul a {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 120%;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #161614;
+}
+
 .logo {
   font-family: 'Roboto', sans-serif;
   font-style: italic;
@@ -61,6 +109,7 @@ header .nav_container a {
   line-height: 58px;
   letter-spacing: -1px;
   align-items: baseline;
+  color: #3c271d;
 }
 
 .logo-header {
@@ -68,13 +117,20 @@ header .nav_container a {
 }
 
 .intro {
+  padding: 60px 0;
   max-width: 770px;
-  height: 680px;
+  min-height: 680px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
   text-align: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.intro .intro_container {
+  width: 100%;
+  padding-top: 50px;
 }
 
 .header-title {
@@ -95,9 +151,11 @@ header .nav_container a {
 
 .header-links {
   display: flex;
-  width: 476px;
+  max-width: 476px;
   justify-content: space-around;
   margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 0 10px;
 }
 
 .header-links a {
@@ -127,20 +185,26 @@ header .nav_container a {
 
 section.projects {
   background: #fffcf9;
-  height: 800px;
+  min-height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  padding: 20px 0;
 }
 
 .projects-container {
   width: 100%;
-  height: 450px;
+  min-height: 450px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
+}
+
+.project {
+  margin: 20px;
 }
 
 #projects-section-title {
@@ -198,12 +262,17 @@ section.projects {
   text-align: center;
 }
 
+.projects-link {
+  margin: 20px 0;
+}
+
 section.services {
   background: #f3eee8;
-  height: 450px;
+  min-height: 450px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 section.services .service {
@@ -230,13 +299,14 @@ section.services .first {
 }
 
 section.blogs {
-  height: 800px;
+  min-height: 800px;
   width: 100%;
   background: #fffcf9;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding: 40px 0;
 }
 
 section.blogs img {
@@ -250,6 +320,7 @@ section.blogs img {
   display: flex;
   width: 100%;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .section-blog-title {
@@ -271,6 +342,7 @@ section.blogs img {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   color: #3c271d;
+  margin: 20px 0;
 }
 
 .blog-item-date {
@@ -296,26 +368,30 @@ section.blogs img {
 
 section.about-me {
   width: 100%;
-  height: 650px;
+  min-height: 650px;
   background: #f3eee8;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
 }
 
 .about-me-images {
-  height: 460px;
+  max-height: 460px;
   width: 560px;
   position: relative;
+  text-align: center;
 }
 
 #first-about-me-img {
-  width: 400px;
-  height: 460px;
+  max-width: 400px;
+  max-width: 100%;
+  height: auto;
 }
 
 #second-about-me-img {
-  width: 210px;
+  max-width: 210px;
   height: 305px;
   z-index: 1;
   left: 350px;
@@ -324,11 +400,14 @@ section.about-me {
 }
 
 section.about-me article {
-  max-width: 400px;
-  height: 455px;
+  width: 400px;
+  min-height: 455px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 20px;
+  align-items: center;
+  text-align: center;
 }
 
 section.about-me article h1 {
@@ -398,6 +477,8 @@ section.subscribe {
   letter-spacing: -0.03em;
   text-transform: capitalize;
   color: #3c271d;
+  text-align: center;
+  padding: 10px 0;
 }
 .subscribe-container input {
   width: 450px;
@@ -414,7 +495,7 @@ section.subscribe {
 }
 
 section.connect {
-  height: 650px;
+  min-height: 650px;
   display: flex;
   align-items: center;
   background: #eae3db;
@@ -451,11 +532,10 @@ section.connect {
   font-weight: 300;
   font-size: 60px;
   line-height: 110%;
-
   letter-spacing: -0.03em;
   text-transform: capitalize;
-
   color: #3c271d;
+  padding: 20px;
 }
 
 .connect-container button {
@@ -476,7 +556,6 @@ section.connect {
 }
 
 footer {
-  /* height: 800px; */
   background: #fffcf9;
 }
 
@@ -497,6 +576,8 @@ footer .ig-area h3 {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #161614;
+  text-align: center;
+  margin-top: 20px;
 }
 
 footer .ig-area .ig-images {
@@ -504,6 +585,10 @@ footer .ig-area .ig-images {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+footer .ig-area .ig-images img {
+  padding: 20px;
 }
 
 footer .footer {
@@ -524,7 +609,7 @@ footer .footer {
 }
 
 .footer-left-container {
-  width: 150px;
+  max-width: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -544,6 +629,15 @@ footer .footer {
 .footer-mid ul,
 .footer-right ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.footer-mid a,
+.footer-right a {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -551,11 +645,6 @@ footer .footer {
   line-height: 120%;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
   color: #161614;
 }
 
@@ -572,4 +661,5 @@ footer .copy-right {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
